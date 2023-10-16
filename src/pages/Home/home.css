@@ -1,0 +1,105 @@
+.header {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  width: 100%;
+}
+@media screen and (max-width: 660px) {
+  .header {
+    flex-direction: column;
+  }
+}
+.header__info {
+  width: 25%;
+}
+@media screen and (max-width: 660px) {
+  .header__info {
+    z-index: 2;
+    width: 250px;
+  }
+}
+.header__info-container1 {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 10px rgb(168, 168, 168);
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.header__info-container1 span {
+  font-size: 2.5rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.header__info-container2 {
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 10px rgb(168, 168, 168);
+  padding: 5px;
+  border-radius: 10px;
+}
+.header__image {
+  width: 75%;
+  display: flex;
+  margin: 10px;
+  align-items: center;
+}
+@media screen and (max-width: 660px) {
+  .header__image {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+.header__image-profile {
+  position: relative;
+  width: 70%;
+  padding: 2rem;
+}
+.header__image-profile-front img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  z-index: 1;
+}
+.header__image-profile-background img {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  z-index: -1;
+}
+.header__image-essentials {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 660px) {
+  .header__image-essentials {
+    flex-direction: row;
+    width: 100%;
+  }
+}
+.header__image-essentials img {
+  max-width: 100%;
+}
+
+[class^=header__image-essential-] {
+  width: 70px;
+  height: 70px;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  z-index: 3;
+}/*# sourceMappingURL=home.css.map */
