@@ -1,4 +1,4 @@
-import { About, Editor } from "./pages";
+import { About, Editor, Home } from "./pages";
 import { Route, Routes } from "react-router-dom";
 import { Navbar } from "./components";
 // firebase
@@ -9,6 +9,8 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/Home" element={<Home />}></Route>
         <Route path="/About" element={<About />}></Route>
         <Route path="/Editor" element={<Editor />}></Route>
       </Routes>
