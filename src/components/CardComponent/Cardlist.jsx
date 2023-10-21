@@ -6,8 +6,8 @@ const Cardlist = (props) => {
     <ul className="flex">
       {props.lists.map((list) => (
         <CardComponent
-          key={list.id}
-          id={list.id}
+          key={list.id || list._id}
+          id={list.id || list._id}
           image={list.image}
           title={list.title}
           description={list.description}

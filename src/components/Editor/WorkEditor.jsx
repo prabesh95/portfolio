@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { storage } from "../../firebase/firebase";
 import { ref, uploadBytes } from "firebase/storage";
 import { v4 } from "uuid";
+import axios from "axios";
 
 const WorkEditor = (props) => {
   const inputRefTitle = useRef();
@@ -11,30 +12,31 @@ const WorkEditor = (props) => {
   const inputRefCodeLink = useRef();
   const inputRefTag = useRef();
 
-  function submitHandler(event) {
-    event.preventDefault();
-    // text content
+  function submitHandler(e) {
+    e.preventDefault();
     const inputTitle = inputRefTitle.current.value;
     const inputDescription = inputRefDescription.current.value;
+    const inputImage = inputRefImage.current.files[0];
     const inputProjectLink = inputRefProjectLink.current.value;
     const inputCodeLink = inputRefCodeLink.current.value;
-    const inputTag = inputRefCodeLink.current.value;
-    //image content
-    const inputRawImage = inputRefImage.current.files[0];
+    const inputTag = inputRefTag.current.value;
 
-    const imageRef = ref(storage, `work/${inputRawImage + v4()}`);
-    uploadBytes(imageRef, inputRawImage).then(() =>
-      console.log("Work content is uploaded")
-    );
+    const formData = new FormData();
+    formData.append("title", inputTitle);
+    formData.append("image", inputImage);
+    formData.append("description", inputDescription);
+    formData.append("projectlink", inputProjectLink);
+    formData.append("codelink", inputCodeLink);
+    formData.append("tag", inputTag);
 
-    const workData = {
-      title: inputTitle,
-      projectlink: inputProjectLink,
-      description: inputDescription,
-      codelink: inputCodeLink,
-      tag: inputTag,
-    };
-    props.addWorkContent(workData);
+    console.log(formData);
+
+    axios
+      .post("http://localhost:8080/demo/work", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      })
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
   }
 
   return (
