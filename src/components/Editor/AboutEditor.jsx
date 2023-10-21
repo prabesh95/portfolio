@@ -19,7 +19,7 @@ const AboutEditor = (props) => {
 
     const imageRef = ref(storage, `abouts/${inputRawImage + v4()}`);
     uploadBytes(imageRef, inputRawImage).then(() =>
-      console.log("image is uploaded")
+      console.log("About content is uploaded")
     );
 
     const aboutData = {
@@ -32,7 +32,7 @@ const AboutEditor = (props) => {
 
   return (
     <form className="editorfile" onSubmit={submitHandler}>
-      <h1>{props.heading}</h1>
+      <h1>About Page Handeling</h1>
 
       <div className="input-box">
         <input
@@ -46,7 +46,7 @@ const AboutEditor = (props) => {
 
       <div className="input-box">
         <label htmlFor="image">Upload Image </label>
-        <input type="file" ref={inputRefImage} />
+        <input type="file" required ref={inputRefImage} />
       </div>
 
       <div className="input-box">
