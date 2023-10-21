@@ -1,0 +1,22 @@
+.work-filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.work-filter__item {
+  padding: 8px;
+  background-color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  margin: 5px;
+  transition: all 0.5s ease;
+  font-weight: 600;
+}
+.work-filter__item:hover {
+  background-color: rgb(140, 185, 224);
+}
+.work-filter .item-active {
+  background-color: rgb(140, 185, 224);
+}/*# sourceMappingURL=Work.css.map */
