@@ -11,6 +11,8 @@ const Cardlist = (props) => {
           image={list.image}
           title={list.title}
           description={list.description}
+          projectLink={list.projectLink}
+          codeLink={list.codeLink}
         />
       ))}
     </ul>
