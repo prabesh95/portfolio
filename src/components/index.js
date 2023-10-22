@@ -5,3 +5,4 @@ export { default as Cardlist } from "./CardComponent/Cardlist";
 export { default as Navbar } from "./Navbar/Navbar";
 export { default as AboutEditor } from "./Editor/AboutEditor";
 export { default as WorkEditor } from "./Editor/WorkEditor";
+export { default as SkillsEditor } from "./Editor/SkillsEditor";

@@ -1,40 +1,34 @@
 import { useRef } from "react";
-import { storage } from "../../firebase/firebase";
-import { ref, uploadBytes } from "firebase/storage";
-import { v4 } from "uuid";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-const WorkEditor = () => {
+const SkillsEditor = () => {
   const navigate = useNavigate();
   const inputRefTitle = useRef();
   const inputRefImage = useRef();
   const inputRefDescription = useRef();
-  const inputRefProjectLink = useRef();
-  const inputRefCodeLink = useRef();
-  const inputRefTag = useRef();
+  const inputRefCompanyName = useRef();
+  const inputRefYear = useRef();
 
   function submitHandler(e) {
     e.preventDefault();
     const inputTitle = inputRefTitle.current.value;
     const inputDescription = inputRefDescription.current.value;
     const inputImage = inputRefImage.current.files[0];
-    const inputProjectLink = inputRefProjectLink.current.value;
-    const inputCodeLink = inputRefCodeLink.current.value;
-    const inputTag = inputRefTag.current.value;
+    const inputCompanyName = inputRefCompanyName.current.value;
+    const inputYear = inputRefYear.current.value;
 
     const formData = new FormData();
     formData.append("title", inputTitle);
     formData.append("image", inputImage);
     formData.append("description", inputDescription);
-    formData.append("projectlink", inputProjectLink);
-    formData.append("codelink", inputCodeLink);
-    formData.append("tag", inputTag);
+    formData.append("companyName", inputCompanyName);
+    formData.append("year", inputYear);
 
     console.log(formData);
 
     axios
-      .post("http://localhost:8080/demo/work", formData, {
+      .post("http://localhost:8080/demo/skills", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       })
       .then((res) => {
@@ -46,14 +40,14 @@ const WorkEditor = () => {
 
   return (
     <form className="editorfile" onSubmit={submitHandler}>
-      <h1>Work Page Handeling</h1>
+      <h1>Skills Page Handeling</h1>
 
       <div className="input-box">
         <input
           className="text-box"
           type="text"
           required
-          placeholder="Portfolio Title"
+          placeholder="Skill Title"
           ref={inputRefTitle}
         />
       </div>
@@ -61,6 +55,25 @@ const WorkEditor = () => {
       <div className="input-box">
         <label htmlFor="image">Upload Image </label>
         <input type="file" ref={inputRefImage} required />
+      </div>
+
+      <div className="input-box">
+        <input
+          className="text-box"
+          type="text"
+          required
+          placeholder="Company Name"
+          ref={inputRefCompanyName}
+        />
+      </div>
+      <div className="input-box">
+        <input
+          className="text-box"
+          type="text"
+          required
+          placeholder="Year"
+          ref={inputRefYear}
+        />
       </div>
 
       <div className="input-box">
@@ -72,31 +85,6 @@ const WorkEditor = () => {
           ref={inputRefDescription}
         />
       </div>
-      <div className="input-box">
-        <input
-          className="text-box"
-          type="url"
-          placeholder="Project link"
-          ref={inputRefProjectLink}
-        />
-      </div>
-      <div className="input-box">
-        <input
-          className="text-box"
-          type="url"
-          placeholder="Code link (https//:github.com/<something>)"
-          ref={inputRefCodeLink}
-        />
-      </div>
-      <div className="input-box">
-        <input
-          className="text-box"
-          type="text"
-          required
-          placeholder="Tag"
-          ref={inputRefTag}
-        />
-      </div>
 
       <div className="input-box right">
         <button> conform</button>
@@ -105,4 +93,4 @@ const WorkEditor = () => {
   );
 };
 
-export default WorkEditor;
+export default SkillsEditor;

@@ -1,4 +1,4 @@
-import { AboutEditor, WorkEditor } from "../../components";
+import { AboutEditor, WorkEditor, SkillsEditor } from "../../components";
 import { useNavigate } from "react-router-dom";
 
 const Editor = () => {
@@ -28,7 +28,8 @@ const Editor = () => {
   return (
     <div className="editor">
       <AboutEditor addAboutContent={addAboutHandler} />
-      <WorkEditor addWorkContent={addWorkHandeler} />
+      <WorkEditor />
+      <SkillsEditor />
     </div>
   );
 };
