@@ -286,3 +286,35 @@ a {
   gap: 15px;
   right: 20px;
 }
+/////////
+.skills {
+  &__container {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    &-image {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 5px;
+      p {
+        margin: 10px;
+        font-weight: 600;
+      }
+      &-img {
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        border-radius: 50%;
+        background-color: aliceblue;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
