@@ -3,14 +3,7 @@ import { images } from "../../constains";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const navlist = [
-    "home",
-    "about",
-    "work",
-    "skills",
-    "testimonials",
-    "contacts",
-  ];
+  const navlist = ["home", "about", "work", "skills", "contacts"];
   return (
     <div className="nav">
       <div className="nav__logo">

@@ -13,6 +13,8 @@ import ui_ux from "../assets/ui_ux.png";
 import web_development from "../assets/web_development.png";
 import web_design from "../assets/web_design.png";
 import web_animation from "../assets/web_animation.png";
+import email from "../assets/email.png";
+import phone from "../assets/phone.png";
 
 const images = {
   facebook,
@@ -30,5 +32,7 @@ const images = {
   web_development,
   web_design,
   web_animation,
+  email,
+  phone,
 };
 export default images;
