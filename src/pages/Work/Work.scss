@@ -1,8 +1,12 @@
+.work {
+  padding: 6rem 2rem 0;
+}
 .work-filter {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
+  padding-top: 1rem;
   &__item {
     padding: 8px;
     background-color: white;

@@ -2,19 +2,55 @@ import { useState, useEffect } from "react";
 import { Cardlist } from "../../components";
 import "./Work.css";
 
-const Work = (props) => {
+const dummydata = [
+  {
+    id: "d1",
+    title: "Modern UI/UX Website",
+    description: "A modern UI/UX Portfolio Website",
+    image:
+      "http://res.cloudinary.com/dg9vehcjo/image/upload/v1697862000/gslrl59cib0rz26wun1i.png",
+    tag: "UI/UX",
+  },
+  {
+    id: "d2",
+    title: "E-Commerce Project",
+    description: "Modern UI/UX",
+    image:
+      "http://res.cloudinary.com/dg9vehcjo/image/upload/v1697880248/tzuvykg3uvxdxptbdz95.png",
+    tag: "UI/UX",
+  },
+  {
+    id: "d3",
+    title: "Sword Guy",
+    description: "Adventure game",
+    image:
+      "http://res.cloudinary.com/dg9vehcjo/image/upload/v1697880587/a0oxypofqsh7opxkdtrv.png",
+    tag: "Java games",
+  },
+];
+
+const Work = () => {
   const [activeFilter, setactiveFilter] = useState("All");
   const [workdata, setworkdata] = useState([]);
   const [filterdata, setfilterdata] = useState([]);
+  const [loading, setloading] = useState(true);
 
   const getUsers = async () => {
-    const response = await fetch("http://localhost:8080/demo/work", {
-      method: "GET",
-    });
-    const data = await response.json();
-    setworkdata(data);
-    setfilterdata(data);
-    console.log(data);
+    try {
+      const response = await fetch("http://localhost:8080/demo/work", {
+        method: "GET",
+      });
+      const data = await response.json();
+      setworkdata(data);
+      setfilterdata(data);
+      //console.log(data);
+      setloading(false);
+    } catch (error) {
+      console.log(error);
+      setworkdata(dummydata);
+      setfilterdata(dummydata);
+      setloading(false);
+    }
   };
   useEffect(() => {
     getUsers();
@@ -28,8 +64,11 @@ const Work = (props) => {
       setfilterdata(workdata.filter((data) => data.tag === item));
     }
   };
+  if (loading) {
+    return <div className="loading">Loading...</div>;
+  }
   return (
-    <div>
+    <div className="work">
       <h2 className="head-text center">
         My Creative <span>Portfolio</span> Section
       </h2>

@@ -1,32 +1,34 @@
 .nav {
-  position: fixed;
   display: flex;
-  justify-content: space-between;
-  padding: 0.2rem 5%;
+  align-items: center;
   background-color: rgba(255, 255, 255, 0.1);
+  justify-content: space-between;
+  width: 100%;
+  position: fixed;
   backdrop-filter: blur(4px);
   --webkit-backdrop-filter: blur(4px);
-  z-index: 999;
-  align-items: center;
-  width: 100%;
+  z-index: 99;
+
   &__logo {
     img {
-      width: 30%;
-      cursor: pointer;
+      width: 5rem;
+
+      display: flex;
+      align-items: center;
     }
   }
   &__link {
     display: flex;
     gap: 2rem;
     align-items: baseline;
+    width: 100%;
+    justify-content: center;
 
     [class^="nav__list-"] {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      position: relative;
-      right: 40px;
       &:hover {
         .empty {
           background-color: blue;
@@ -46,45 +48,81 @@
       text-decoration: none !important;
       font-size: 18px;
       color: black;
-      font-weight: 600;
+      font-weight: 900;
       transition: all 0.5s ease-in-out;
       text-transform: uppercase;
       text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
       &:hover {
-        color: blue;
+        color: var(--secondary-color);
       }
+    }
+    @media screen and (max-width: 660px) {
+      display: none;
     }
   }
-  &__admin {
+}
+.app__nav__menu {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  position: relative;
+  background-color: var(--secondary-color);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  svg {
+    color: white;
+    size: 80%;
+  }
+  div {
+    top: 0px;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: 5;
+    padding: 1rem;
+    width: 80%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background-image: url("../../assets/nav-background.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+    box-shadow: 0 0 20px rgb(168, 168, 168);
+
+    svg {
+      color: var(--secondary-color);
+      width: 25px;
+      height: 20%;
+    }
+  }
+
+  li {
+    list-style: none;
+    display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    &:hover {
-      .empty {
-        background-color: blue;
-      }
+    width: 100%;
+    height: 80%;
+
+    transition: all 0.8s ease-in-out;
+
+    :hover {
+      color: var(--blue-color);
     }
-    .empty {
-      width: 12px;
-      height: 12px;
-      background-color: black;
-      border-radius: 50%;
-      transition: all 0.5s ease-in-out;
-      background-color: transparent;
-    }
+
     a {
-      text-decoration: none !important;
-      font-size: 18px;
-      color: black;
-      font-weight: 600;
-      transition: all 0.5s ease-in-out;
+      text-decoration: none;
       text-transform: uppercase;
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-      &:hover {
-        color: blue;
-      }
+      font-weight: 800;
+      color: black;
     }
+  }
+  @media screen and (min-width: 660px) {
+    display: none;
   }
 }

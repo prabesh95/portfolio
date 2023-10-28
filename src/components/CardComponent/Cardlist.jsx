@@ -3,7 +3,7 @@ import CardComponent from "./CardComponent";
 
 const Cardlist = (props) => {
   return (
-    <ul className="flex">
+    <ul className="flex ">
       {props.lists.map((list) => (
         <CardComponent
           key={list.id || list._id}
