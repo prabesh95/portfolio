@@ -1,30 +1,81 @@
 import "./Skills.css";
 import { useState, useEffect } from "react";
 
+const dummydata = [
+  {
+    id: "a1",
+    title: "React Js",
+    description: "Front-End Developer",
+    companyName: "Google",
+    image:
+      "http://res.cloudinary.com/dg9vehcjo/image/upload/v1697947849/zxs86xsw7dizanwd3nqt.png",
+    year: "2020",
+  },
+  {
+    id: "a2",
+    title: "Java Script",
+    description: "Front-End programming",
+    companyName: "Facebook",
+    image:
+      "http://res.cloudinary.com/dg9vehcjo/image/upload/v1697948729/nus6enwzdwvvizyls5lo.png",
+    year: "2021",
+  },
+  {
+    id: "a3",
+    title: "Bootstrap",
+    description: "Web Development",
+    companyName: "Microsoft",
+    image:
+      "http://res.cloudinary.com/dg9vehcjo/image/upload/v1697948825/luf13bfyyjxnmnhgbuhy.png",
+    year: "2010",
+  },
+  {
+    id: "a4",
+    title: "Scss",
+    description: "Website Design and Development",
+    companyName: "Google",
+    image:
+      "http://res.cloudinary.com/dg9vehcjo/image/upload/v1697948925/uaptxau0ifefqql6fbbv.png",
+    year: "2020",
+  },
+];
+
 const Skills = () => {
   const [skillsdata, setskillsdata] = useState([]);
+  const [loading, setloading] = useState(true);
 
   const getUsers = async () => {
-    const response = await fetch("http://localhost:8080/demo/skills", {
-      method: "GET",
-    });
-    const data = await response.json();
+    try {
+      const response = await fetch("http://localhost:8080/demo/skills", {
+        method: "GET",
+      });
+      const data = await response.json();
 
-    console.log(data);
-    setskillsdata(data);
+      console.log(data);
+      setskillsdata(data);
+      setloading(false);
+    } catch (error) {
+      console.log(error);
+      setskillsdata(dummydata);
+      setloading(false);
+    }
   };
   useEffect(() => {
     getUsers();
   }, []);
 
+  if (loading) {
+    return <div className="loading">Loading...</div>;
+  }
+
   return (
-    <div>
+    <div className="skill">
       <h2 className="head-text center">Skills & Expriences</h2>
       <div className="skills">
         <div className="skills-container">
           <div className="skills-list">
             {skillsdata.map((skill) => (
-              <div className="skills-item" key={skill._id}>
+              <div className="skills-item" key={skill._id || skill.id}>
                 <div className="skills-image">
                   <img src={skill.image} alt={skill.title} />
                 </div>

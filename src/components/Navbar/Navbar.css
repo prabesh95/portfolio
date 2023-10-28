@@ -1,32 +1,32 @@
 .nav {
-  position: fixed;
   display: flex;
-  justify-content: space-between;
-  padding: 0.2rem 5%;
+  align-items: center;
   background-color: rgba(255, 255, 255, 0.1);
+  justify-content: space-between;
+  width: 100%;
+  position: fixed;
   -webkit-backdrop-filter: blur(4px);
           backdrop-filter: blur(4px);
   --webkit-backdrop-filter: blur(4px);
-  z-index: 999;
-  align-items: center;
-  width: 100%;
+  z-index: 99;
 }
 .nav__logo img {
-  width: 30%;
-  cursor: pointer;
+  width: 5rem;
+  display: flex;
+  align-items: center;
 }
 .nav__link {
   display: flex;
   gap: 2rem;
   align-items: baseline;
+  width: 100%;
+  justify-content: center;
 }
 .nav__link [class^=nav__list-] {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
-  right: 40px;
 }
 .nav__link [class^=nav__list-]:hover .empty {
   background-color: blue;
@@ -43,41 +43,78 @@
   text-decoration: none !important;
   font-size: 18px;
   color: black;
-  font-weight: 600;
+  font-weight: 900;
   transition: all 0.5s ease-in-out;
   text-transform: uppercase;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 .nav__link a:hover {
-  color: blue;
+  color: var(--secondary-color);
 }
-.nav__admin {
+@media screen and (max-width: 660px) {
+  .nav__link {
+    display: none;
+  }
+}
+
+.app__nav__menu {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  position: relative;
+  background-color: var(--secondary-color);
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
+  margin-right: 10px;
 }
-.nav__admin:hover .empty {
-  background-color: blue;
+.app__nav__menu svg {
+  color: white;
+  size: 80%;
 }
-.nav__admin .empty {
-  width: 12px;
-  height: 12px;
-  background-color: black;
-  border-radius: 50%;
-  transition: all 0.5s ease-in-out;
-  background-color: transparent;
+.app__nav__menu div {
+  top: 0px;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  z-index: 5;
+  padding: 1rem;
+  width: 80%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background-image: url("../../assets/nav-background.jpg");
+  background-size: cover;
+  background-repeat: repeat;
+  box-shadow: 0 0 20px rgb(168, 168, 168);
 }
-.nav__admin a {
-  text-decoration: none !important;
-  font-size: 18px;
-  color: black;
-  font-weight: 600;
-  transition: all 0.5s ease-in-out;
+.app__nav__menu div svg {
+  color: var(--secondary-color);
+  width: 25px;
+  height: 20%;
+}
+.app__nav__menu li {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80%;
+  transition: all 0.8s ease-in-out;
+}
+.app__nav__menu li :hover {
+  color: var(--blue-color);
+}
+.app__nav__menu li a {
+  text-decoration: none;
   text-transform: uppercase;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  font-weight: 800;
+  color: black;
 }
-.nav__admin a:hover {
-  color: blue;
+@media screen and (min-width: 660px) {
+  .app__nav__menu {
+    display: none;
+  }
 }/*# sourceMappingURL=Navbar.css.map */

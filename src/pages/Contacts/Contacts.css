@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 6rem 2rem 0;
 }
 .contacts__cards {
   width: 60%;
@@ -10,7 +11,7 @@
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap-reverse;
-  margin: 4rem 2rem 2rem;
+  margin: 1rem 2rem 1rem;
 }
 .contacts__cards .contacts__card {
   min-width: 290px;
@@ -63,7 +64,6 @@
 }
 .contacts__form div {
   width: 100%;
-  margin: 0.75rem 0;
   border-radius: 10ox;
   cursor: pointer;
   transition: all 0.3 ease-in-out;
@@ -74,6 +74,7 @@
   padding: 0.8rem;
   border: none;
   border-radius: 7px;
+  margin-bottom: 0.5rem;
   outline: none;
 }
 .contacts__form div textarea {
@@ -88,8 +89,13 @@
   border: none;
   font-weight: 600;
   outline: none;
-  margin: 2rem 0 0 0;
+  margin: 1rem 0 0 0;
   cursor: pointer;
+  color: white;
+  background-color: #313bac;
+}
+.contacts__form button :hover {
+  background-color: #0d20e8;
 }
 @media screen and (max-width: 768px) {
   .contacts__form {

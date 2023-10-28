@@ -1,11 +1,12 @@
 import { Modal } from "../../components";
 import { Backdrop } from "../../components";
 import { useState } from "react";
+import { motion } from "framer-motion";
 const CardComponent = (props) => {
   const [imageState, setimageState] = useState(false);
 
   return (
-    <div className="card">
+    <div className={`${!imageState === true ? "card" : ""}`}>
       <div
         className="card__image"
         onClick={() => {
@@ -16,6 +17,7 @@ const CardComponent = (props) => {
       </div>
       <div className="card__title center">{props.title}</div>
       <div className="card__descreption">{props.description}</div>
+
       {imageState && (
         <Backdrop
           onClick={() => {

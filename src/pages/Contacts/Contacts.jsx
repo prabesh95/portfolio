@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import "./Contacts.css";
 import { images } from "../../constains";
+import axios from "axios";
 
 const Contacts = () => {
   const [formData, setformData] = useState({});
@@ -23,16 +24,18 @@ const Contacts = () => {
       email: inputEmail,
       message: inputMessage,
     });
-    const response = await fetch("http://localhost:8080/demo/client", {
-      method: "POST",
-      body: JSON.stringify(formData),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const data = await response.json();
-    console.log(data);
-    setformSubmitted(true);
+    axios
+      .post("http://localhost:8080/demo/client", formData)
+      .then((res) => {
+        console.log(res);
+        //navigate("/", { replace: true });
+        // const data = res.json();
+        // console.log(data);
+        // console.log(formSubmitted);
+        setformSubmitted(true);
+        console.log(formSubmitted);
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -56,12 +59,14 @@ const Contacts = () => {
             <input
               type="text"
               placeholder="Your Name"
+              required
               name="name"
               ref={inputRefName}
             />
           </div>
           <div className="email">
             <input
+              required
               type="email"
               placeholder="Your email"
               name="email"
@@ -70,15 +75,14 @@ const Contacts = () => {
           </div>
           <div className="textarea">
             <textarea
+              required
               name="message"
               placeholder="Your Message"
               ref={inputRefMessage}
             />
           </div>
           <div className="button">
-            <button type="button">
-              {loading ? "Sending..." : "Send Message"}
-            </button>
+            <button>{loading ? "Sending..." : "Send Message"}</button>
           </div>
         </form>
       ) : (

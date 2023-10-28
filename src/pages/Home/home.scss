@@ -1,3 +1,11 @@
+#head {
+  position: relative;
+  background: url("../../assets/bgImg.png");
+  background-size: cover;
+  z-index: 0;
+  background-position: center;
+}
+
 .header {
   box-sizing: border-box;
   display: flex;
@@ -5,7 +13,9 @@
   justify-content: center;
   padding: 1.5rem;
   width: 100%;
-
+  height: 100vh;
+  padding: 6rem 2rem 0;
+  overflow: hidden;
   @media screen and (max-width: 660px) {
     flex-direction: column;
   }
@@ -18,21 +28,24 @@
 
     &-container1 {
       display: flex;
-      background-color: rgba(255, 255, 255, 0.4);
+      background-color: rgba(255, 255, 255, 0.5);
       box-shadow: 0 0 10px rgb(168, 168, 168);
       border-radius: 10px;
       padding: 5px;
       margin-bottom: 10px;
+
       span {
         font-size: 2.5rem;
         object-fit: contain;
       }
     }
     &-container2 {
-      background-color: rgba(255, 255, 255, 0.4);
       box-shadow: 0 0 10px rgb(168, 168, 168);
+      margin-top: 30px;
       padding: 5px;
       border-radius: 10px;
+      width: 80%;
+      background-color: rgba(255, 255, 255, 0.5);
     }
   }
   &__image {
@@ -73,12 +86,29 @@
       }
     }
 
-    &-essentials {
+    &-essential {
       width: 30%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+
+      &-java {
+        background-color: yellow;
+        box-shadow: 0 0 10px rgb(168, 168, 168);
+      }
+      &-bootstrap {
+        background-color: white;
+        box-shadow: 0 0 10px rgb(168, 168, 168);
+      }
+      &-react {
+        background-color: rgb(41, 41, 41);
+        box-shadow: 0 0 10px rgb(168, 168, 168);
+      }
+      &-sass {
+        background-color: rgb(215, 215, 215);
+        box-shadow: 0 0 10px rgb(168, 168, 168);
+      }
 
       @media screen and (max-width: 660px) {
         flex-direction: row;

@@ -1,12 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Sofia+Sans:ital,wght@1,300&display=swap");
+:root {
+  --font-base: "Open Sans", sans-serif;
+
+  --primary-color: #bcd9f5;
+  --secondary-color: #313bac;
+  --black-color: #030303;
+  --white-color: #ffffff;
+  --lightGray: #e4e4e4;
+  --gray-color: #6b7688;
+  --brown-color: #46364a;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: var(--font-base);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: antiquewhite;
+  background-color: var(--primary-color);
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -16,6 +27,15 @@ body {
 .App {
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
+  font-weight: 600;
+}
+p {
+  text-transform: capitalize;
+}
+.head-text {
+  text-transform: uppercase;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -37,6 +57,14 @@ code {
   margin: 1rem;
   border-radius: 4px;
   box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+.overflow {
+  overflow: hidden;
+}
+.card:hover,
+.contacts__card:hover {
+  transform: scale(1.1);
 }
 .box-size {
   max-width: 100%;
@@ -66,7 +94,9 @@ code {
   width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.75);
-  z-index: 3;
+  backdrop-filter: blur(20px);
+  --webkit-backdrop-filter: blur(20px);
+  z-index: 998;
 }
 .editor {
   display: flex;

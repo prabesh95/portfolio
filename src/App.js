@@ -1,6 +1,7 @@
 import { About, Editor, Home, Work, Login, Skills, Contacts } from "./pages";
 import { Route, Routes } from "react-router-dom";
 import { Navbar } from "./components";
+import { Link } from "react-router-dom";
 // firebase
 //uuid
 //react-router-dom
@@ -8,6 +9,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
+
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/Home" element={<Home />}></Route>
