@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.577a88df.css",
+    "main.js": "/portfolio/static/js/main.00d91656.js",
+    "static/media/ui_ux.png": "/portfolio/static/media/ui_ux.82d3c14c28b79b70988c.png",
+    "static/media/web_design.png": "/portfolio/static/media/web_design.5920e3d36af91f0f1cb5.png",
+    "static/media/nav-background.jpg": "/portfolio/static/media/nav-background.e2adfee4a2f8ab54edbf.jpg",
+    "static/media/phone.png": "/portfolio/static/media/phone.65bb28dcb49d7538913d.png",
+    "static/media/picture.png": "/portfolio/static/media/picture.b43c1b11c245a9761ade.png",
+    "static/media/instagram.png": "/portfolio/static/media/instagram.9b6d5f410b43621d256f.png",
+    "static/media/web_development.png": "/portfolio/static/media/web_development.ee5d80ec15faab579f78.png",
+    "static/media/email.png": "/portfolio/static/media/email.bf635ff63ee20d0973c2.png",
+    "static/media/bgImg.png": "/portfolio/static/media/bgImg.1ab82e115f67b5509fe9.png",
+    "static/media/react.png": "/portfolio/static/media/react.6b7e8eca11b293e09d80.png",
+    "static/media/bootstrap.png": "/portfolio/static/media/bootstrap.de00b204dc9bced7a68f.png",
+    "static/media/circle.png": "/portfolio/static/media/circle.2d989f03fbfcfdaba03d.png",
+    "static/media/games.png": "/portfolio/static/media/games.7556494c4c84c9e73904.png",
+    "static/media/web_animation.png": "/portfolio/static/media/web_animation.84da50498bc97e314e25.png",
+    "static/media/logo.png": "/portfolio/static/media/logo.64ff9efa3c43b7fa1743.png",
+    "static/media/js.png": "/portfolio/static/media/js.efc590f1b8021629edb4.png",
+    "static/media/sass.png": "/portfolio/static/media/sass.a5e56eab74d30653b1a6.png",
+    "static/media/facebook.png": "/portfolio/static/media/facebook.7937d1735e25eb157e89.png",
+    "static/media/twitter.png": "/portfolio/static/media/twitter.8c09922dca7858ef4b2f.png",
+    "index.html": "/portfolio/index.html",
+    "main.577a88df.css.map": "/portfolio/static/css/main.577a88df.css.map",
+    "main.00d91656.js.map": "/portfolio/static/js/main.00d91656.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.577a88df.css",
+    "static/js/main.00d91656.js"
+  ]
+}
